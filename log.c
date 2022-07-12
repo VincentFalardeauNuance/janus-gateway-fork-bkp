@@ -113,7 +113,8 @@ static void *janus_log_thread(void *ctx) {
 			for (b = head; b; b = b->next) {
 				if(janus_log_console){
 					//Make sure that logs are always printed on one line
-					for(int i = 0; b->str[i] != '\0'; i++){
+					int i;
+					for(i = 0; b->str[i] != '\0'; i++){
 						if(b->str[i] == '\n'){
 							b->str[i] = ' ';
 						}

@@ -193,7 +193,8 @@ gchar* janus_validate_json_str_obj(json_t *obj) {
 
 	// Stop the string at the first occurance of ':'
 	if(result) {
-		for(int i = 0; i < strlen(result); i++) {
+		int i;
+		for(i = 0; i < strlen(result); i++) {
 			if (result[i] == ':') {
 				result[i] = 0;
 				break;
@@ -275,7 +276,8 @@ gboolean janus_check_param_checksum(json_t *root, const char* request) {
 	char field_content[MAX_CHECKSUM_FIELD_SIZE];
 	field_content[0] = 0;
 
-	for(int i = 0; i < field_count; i++) {
+	int i;
+	for(i = 0; i < field_count; i++) {
 
 		json_t* json_field = json_object_get(root, fields[i]);
 
